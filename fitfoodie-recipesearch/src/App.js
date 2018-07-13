@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import NavBar from './Components/NavBar/NavBar.js';
+import SearchBar from './Components/SearchBar/SearchBar.js';
+import QuickLinks from './Components/QuickLinkCarousel/QuickLinks.js';
+import RandomSelectedRecipes from './Components/RandomlySelectedRecipes/RandomRecipesSquares.js';
+import Footer from './Components/Footer/Footer.js';
 import './App.css';
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <h1>Hey world, whats good?!</h1>
+                <NavBar />
+                <SearchBar />
+                <QuickLinks />
+                <RandomSelectedRecipes />
+                <Footer />
             </div>
         );
     }
