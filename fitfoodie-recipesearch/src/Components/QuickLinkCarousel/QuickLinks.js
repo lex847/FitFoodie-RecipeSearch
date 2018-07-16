@@ -59,7 +59,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="#">
                                     <img src={samplepic} className="pic" alt="example" /><br />
-                                    <p className="category-title">Indian</p>
+                                    <p className="category-title">Salad</p>
                                 </a>
                             </div>
                             <div className="slide-pic">
@@ -77,7 +77,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="#">
                                     <img src={samplepic} className="pic" alt="example" /><br />
-                                    <p className="category-title">Peanut Butter</p>
+                                    <p className="category-title">Pasta</p>
                                 </a>
                             </div>
                             <div className="slide-pic">

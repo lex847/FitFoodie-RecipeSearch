@@ -26,6 +26,10 @@ h1 {
     height: auto;
 }
 
+.btn-random {
+    opacity: 0.5;
+}
+
 .container .btn {
     position: absolute;
     top: 16%;
