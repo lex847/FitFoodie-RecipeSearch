@@ -1,0 +1,19 @@
+.form-control  {
+    height: 70px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width:800px;
+}
+
+.form-control:focus {
+        border-color: #ff80ff !important;
+        box-shadow: 10px 1px 1px rgba(0, 0, 0, 0) inset, 0px 0px 8px rgba(255, 100, 255, 0.5) !important;
+    }
+
+.form-group {
+    display: inline;
+}
+
+.input-group-addon {
+    margin-right: 10px;
+}
