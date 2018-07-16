@@ -4,6 +4,7 @@ import SearchBar from './Components/SearchBar/SearchBar.js';
 import QuickLinks from './Components/QuickLinkCarousel/QuickLinks.js';
 import RandomSelectedRecipes from './Components/RandomlySelectedRecipes/RandomRecipesSquares.js';
 import Footer from './Components/Footer/Footer.js';
+import SearchResultsPage from './Components/SearchResultsPage/SearchResults.js';
 import './App.css';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
                 <QuickLinks />
                 <RandomSelectedRecipes />
                 <Footer />
+                <SearchResultsPage />
             </div>
         );
     }

@@ -11,4 +11,4 @@ class SearchResults extends Component {
     }
 }
 
-export default SeachResults;
+export default SearchResults;
