@@ -6,7 +6,7 @@ class SearchBar extends Component {
     constructor(props){
         super(props);
         this.state = {
-
+            recipeSearchInput: ''
         }
         this.userInputHandleChange = this.userInputHandleChange.bind(this);
         this.searchRecipesUserInput = this.searchRecipesUserInput.bind(this);
@@ -14,10 +14,30 @@ class SearchBar extends Component {
 
     userInputHandleChange = (event) => {
         console.log('inside user input');
+        this.setState({
+            recipeSearchInput: event.target.value
+        })
     }
 
     searchRecipesUserInput = () => {
         console.log('inside button search click');
+        let { recipeSearchInput } = this.state
+        let APPID = '4a967418'
+        let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
+
+        let URL = `https://api.edamam.com/search?q={recipeSearchInput}&app_id=${APPID}&app_key=${APPKEY}&count=50`
+        let config = {
+            method: 'GET',
+        }
+
+        fetch(URL, config)
+        .then((response) => {
+          console.log(response);
+        .err((error) => {
+            console.log("Something went wrong ");
+            console.log(error);
+        })
+
     }
     render(){
         return(
