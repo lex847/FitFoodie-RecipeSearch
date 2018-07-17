@@ -37,7 +37,7 @@ class NavBar extends Component {
                                 <a className="nav-link" href="/faq">Help</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="http://ashataylor.com" target="#">About</a>
+                                <a className="nav-link" href="https://www.edamam.com/" target="#">About the API</a>
                             </li>
                         </ul>
                     </div>

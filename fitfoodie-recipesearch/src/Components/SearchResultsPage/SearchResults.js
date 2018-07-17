@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Pagination from "react-js-pagination";
 import './SearchResults.css';
 
 class SearchResults extends Component {

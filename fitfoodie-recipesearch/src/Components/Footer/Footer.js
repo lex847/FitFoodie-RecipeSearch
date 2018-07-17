@@ -4,8 +4,21 @@ import './Footer.css';
 class Footer extends Component {
     render(){
         return(
-            <div>
-                <h1>Within Footer</h1>
+            <div className="footer-container">
+                <div className="row">
+                    <div className="col-sm-4">
+                        <h4>About</h4>
+                        <p>text text text text</p>
+                    </div>
+                    <div className="col-sm-4">
+                        <h4>About</h4>
+                        <p>text text text text</p>
+                    </div>
+                    <div className="col-sm-4">
+                        <h4>About</h4>
+                        <p>text text text text</p>
+                    </div>
+                </div>
             </div>
         )
     }
