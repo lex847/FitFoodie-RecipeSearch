@@ -14,8 +14,8 @@ class App extends Component {
                 <NavBar />
                 <SearchBar />
                 <QuickLinks />
-                <SearchResultsPage />
                 <RandomSelectedRecipes />
+                <SearchResultsPage />
                 <Footer />
             </div>
         );

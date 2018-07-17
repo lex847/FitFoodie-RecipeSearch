@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Food from './Images/food.jpg';
 import './SearchBar.css';
 
 class SearchBar extends Component {
@@ -6,11 +7,18 @@ class SearchBar extends Component {
         return(
             <div className="searchbar-container">
                 <div className="row">
+                    <div className="col-sm-12">
+                        <div className="jumbotron">
+                            <img  className="jumbotron-pic" src={Food} alt="food" />
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
                     <div className="col-md-12">
                         <form className="navbar-form ">
                             <div className="form-group">
                                 <div className="input-group">
-                                    <input className="form-control" type="text" placeholder="Search a recipe or by ingredient" />
+                                    <input className="form-control" type="text" placeholder="Search recipes or ingredient" />
                                     <button className="btn btn-info input-group-addon">
                                         <i className="fas fa-search"></i>
                                   </button>

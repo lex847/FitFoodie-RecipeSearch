@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import FoodLandingPagePic from './Images/food.png';
 import './HomePage.css';
 
 class HomePage extends Component {
     render(){
         return(
             <div>
-                <h1>Within Random Home page</h1>
+                <div class="jumbotron">
+                    <img src={FoodLandingPagePic} alt={Food} />
+                </div>
             </div>
         )
     }
