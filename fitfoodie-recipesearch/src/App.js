@@ -13,8 +13,8 @@ class App extends Component {
         super(props);
         this.state = {
             recipeSearchInput: '',
-            data: {},
-            isSearchButtonPressed: false
+            hits: []
+            // isSearchButtonPressed: false
         }
         this.userInputHandleChange = this.userInputHandleChange.bind(this);
         this.searchRecipesUserInput = this.searchRecipesUserInput.bind(this);
@@ -42,8 +42,8 @@ class App extends Component {
             let response = await fetch(URL, config);
             let responseJSON = await response.json();
             this.setState({
-                isSearchButtonPressed: true,
-                data: responseJSON
+                // isSearchButtonPressed: true,
+                hits: responseJSON.hits
             })
             console.log(responseJSON);
         }catch(e){
@@ -53,17 +53,22 @@ class App extends Component {
     }
 
     render() {
+        const recipeSquares = this.state.hits.map((info) => {
+            return(
+                <div>
+                    <img src={info.recipe.image}  />
+                    <h3>{info.recipe.label}</h3><br/>
+                    <p>{info.recipe.yield}</p>
+                </div>
+            )
+        })
         return (
             <div className="App">
                 <NavBar />
                 <SearchBar inputField={this.userInputHandleChange} searchButton={this.searchRecipesUserInput}/>
-                {this.state.isSearchButtonPressed ?
                 <QuickLinks />
                 <RandomSelectedRecipes />
-                : null }
-                {this.state.isSearchButtonPressed ?
-                <SearchResultsPage data={this.state.data}/>
-                : null }
+                <SearchResultsPage squareInfo={recipeSquares}/>
                 <FullRecipe />
                 <Footer />
             </div>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import samplepic from './QuickLinksImages/recipes.png';
-import Chicken from './QuickLinksImages/chicken.jpg';
 import './QuickLinks.css';
 
 class QuickLinks extends Component {

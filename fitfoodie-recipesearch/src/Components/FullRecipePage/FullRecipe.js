@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import './FullRecipe.css';
 
 class FullRecipe extends Component {
-    constructor(props){
-        super(props);
-    }
     render(){
         return(
             <div className="FullRecipe-container">
