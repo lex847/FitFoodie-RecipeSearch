@@ -13,8 +13,9 @@ class App extends Component {
         super(props);
         this.state = {
             recipeSearchInput: '',
-            hits: []
-            // isSearchButtonPressed: false
+            hits: [],
+            isSearchButtonPressed: false,
+            isSearchSquarePressed: false
         }
         this.userInputHandleChange = this.userInputHandleChange.bind(this);
         this.searchRecipesUserInput = this.searchRecipesUserInput.bind(this);
@@ -30,7 +31,7 @@ class App extends Component {
         //prevents page from reloading after search button is clicked since this
         //code is within a form tag.
         event.preventDefault()
-        let { recipeSearchInput, isSearchButtonPressed } = this.state
+        let { recipeSearchInput, isSearchButtonPressed, hits } = this.state
         let APPID = '4a967418'
         let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
         let URL = `https://api.edamam.com/search?q=${recipeSearchInput}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
@@ -42,7 +43,7 @@ class App extends Component {
             let response = await fetch(URL, config);
             let responseJSON = await response.json();
             this.setState({
-                // isSearchButtonPressed: true,
+                isSearchButtonPressed: true,
                 hits: responseJSON.hits
             })
             console.log(responseJSON);
@@ -68,10 +69,20 @@ class App extends Component {
             <div className="App">
                 <NavBar />
                 <SearchBar inputField={this.userInputHandleChange} searchButton={this.searchRecipesUserInput}/>
-                <QuickLinks />
-                <RandomSelectedRecipes />
-                <SearchResultsPage squareInfo={recipeSquares}/>
-                <FullRecipe />
+                <div>
+                    {this.state.isSearchButtonPressed ?
+                        <SearchResultsPage squareInfo={recipeSquares}/>
+                        :   <div>
+                                <QuickLinks />
+                                <RandomSelectedRecipes />
+                            </div>
+                    }
+                </div>
+                <div>
+                    {this.state.isSearchSquarePressed ?
+                    <FullRecipe />
+                    : null}
+                </div>
                 <Footer />
             </div>
         );
