@@ -55,10 +55,14 @@ class App extends Component {
     render() {
         const recipeSquares = this.state.hits.map((info) => {
             return(
-                <div>
-                    <img src={info.recipe.image}  />
-                    <h3>{info.recipe.label}</h3><br/>
-                    <p>{info.recipe.yield}</p>
+                <div className="row">
+                    <div className="col-sm-4">
+                        <div className="container">
+                            <img src={info.recipe.image}  />
+                            <h3>{info.recipe.label}</h3>
+                            <p>Servings: {info.recipe.yield}</p>
+                        </div>
+                    </div>
                 </div>
             )
         })
