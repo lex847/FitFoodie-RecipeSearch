@@ -6,19 +6,30 @@ class QuickLinks extends Component {
     constructor(props){
         super(props);
         this.state = {
-
+            hits: [],
+            isAQuickLinkedClicked: false,
+            quickLinkClicked: ''
         }
         this.quickSearchHandleClick = this.quickSearchHandleClick.bind(this);
+        this.whatCircleWasClicked = this.whatCircleWasClicked.bind(this);
+    }
+
+    whatCircleWasClicked = (ingredient) => {
+        console.log(ingredient);
+        var { quickLinkClicked } = this.state
+        this.setState({
+            quickLinkClicked: ingredient
+        })
     }
 
     quickSearchHandleClick = async (event) => {
         //prevents page from reloading after search button is clicked since this
         //code is within a form tag.
         event.preventDefault()
-        let { recipeSearchInput, isSearchButtonPressed, hits } = this.state
+        let { quickLinkClicked, hits, isAQuickLinkedClicked } = this.state
         let APPID = '4a967418'
         let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
-        let URL = `https://api.edamam.com/search?q=${recipeSearchInput}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
+        let URL = `https://api.edamam.com/search?q=${quickLinkClicked}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
         let config = {
             method: 'GET'
         }
@@ -27,7 +38,7 @@ class QuickLinks extends Component {
             let response = await fetch(URL, config);
             let responseJSON = await response.json();
             this.setState({
-                isSearchButtonPressed: true,
+                isAQuickLinkedClicked: true,
                 hits: responseJSON.hits
             })
             console.log(responseJSON);
@@ -36,6 +47,7 @@ class QuickLinks extends Component {
             console.log(e);
         }
     }
+
     render(){
         return(
             <div className="quicklinks-container">
@@ -48,74 +60,123 @@ class QuickLinks extends Component {
                     <div className="col-md-12">
                         <div id="carousel">
                             <div className="slide-pic">
-                                <a href={this.quickSearchHandleClick}>
-                                    <img src={samplepic} className="pic" alt="example" id="Chicken" /><br />
+                                <a href=''>
+                                    <img
+                                        onClick={() => this.whatCircleWasClicked('Chicken')}
+                                        src={samplepic}
+                                        className="pic"
+                                        alt="example" /><br />
                                     <p className="category-title">Chicken</p>
                                 </a>
                             </div>
                             <div className="slide-pic">
                                 <a href="">
-                                    <img src={samplepic} className="pic" alt="example1" id="Beef" /><br />
+                                    <img
+                                        onClick={() => this.whatCircleWasClicked('Beef')}
+                                        src={samplepic}
+                                        className="pic"
+                                        alt="example1" /><br />
                                     <p className="category-title">Beef</p>
                                 </a>
                             </div>
                             <div className="slide-pic">
                                 <a href="">
-                                    <img src={samplepic} className="pic" alt="example2" id="Vegitarian"  /><br />
+                                    <img
+                                        onClick={() => this.whatCircleWasClicked('Vegitarian')}
+                                        src={samplepic}
+                                        className="pic"
+                                        alt="example2" /><br />
                                     <p className="category-title">Vegitarian</p>
                                 </a>
                             </div>
                             <div className="slide-pic">
                                 <a href="">
-                                    <img src={samplepic} className="pic" alt="example3" id="Fish" /><br />
+                                    <img
+                                        onClick={() => this.whatCircleWasClicked('Fish')}
+                                        src={samplepic}
+                                        className="pic"
+                                        alt="example3" /><br />
                                     <p className="category-title">Fish</p>
                                 </a>
                             </div>
                             <div className="slide-pic">
                                 <a href="">
-                                    <img src={samplepic} className="pic" alt="example4" id="Mexican" /><br />
+                                    <img
+                                        onClick={() => this.whatCircleWasClicked('Mexican')}
+                                        src={samplepic}
+                                        className="pic"
+                                        alt="example4" /><br />
                                     <p className="category-title">Mexican</p>
                                 </a>
                             </div>
                             <div className="slide-pic">
                                 <a href="">
-                                    <img src={samplepic} className="pic" alt="example5" id="Chocolate" /><br />
+                                    <img
+                                        onClick={() => this.whatCircleWasClicked('Chocolate')}
+                                        src={samplepic}
+                                        className="pic"
+                                        alt="example5" /><br />
                                     <p className="category-title">Chocolate</p>
                                 </a>
                             </div>
                             <div className="slide-pic">
                                 <a href="">
-                                    <img src={samplepic} className="pic" alt="example6" id="Fruit" /><br />
+                                    <img
+                                        onClick={() => this.whatCircleWasClicked('Fruit')}
+                                        src={samplepic}
+                                        className="pic"
+                                        alt="example6" /><br />
                                     <p className="category-title">Fruit</p>
                                 </a>
                             </div>
                             <div className="slide-pic">
                                 <a href="">
-                                    <img src={samplepic} className="pic" alt="example7" id="Salad" /><br />
+                                    <img
+                                        onClick={() => this.whatCircleWasClicked('Salad')}
+                                        src={samplepic}
+                                        className="pic"
+                                        alt="example7" /><br />
                                     <p className="category-title">Salad</p>
                                 </a>
                             </div>
                             <div className="slide-pic">
                                 <a href="">
-                                    <img src={samplepic} className="pic" alt="example8" id="Dessert" /><br />
+                                    <img
+                                        onClick={() => this.whatCircleWasClicked('Dessert')}
+                                        src={samplepic}
+                                        className="pic"
+                                        alt="example8"
+                                        id="" /><br />
                                     <p className="category-title">Low-cal Dessert</p>
                                 </a>
                             </div>
                             <div className="slide-pic">
                                 <a href="">
-                                    <img src={samplepic} className="pic" alt="example9" id="Breakfast" /><br />
+                                    <img
+                                        onClick={() => this.whatCircleWasClicked('Breakfast')}
+                                        src={samplepic}
+                                        className="pic"
+                                        alt="example9" /><br />
                                     <p className="category-title">Breakfast</p>
                                 </a>
                             </div>
                             <div className="slide-pic">
                                 <a href="">
-                                    <img src={samplepic} className="pic" alt="example10" id="Pasta" /><br />
+                                    <img
+                                        onClick={() => this.whatCircleWasClicked('Pasta')}
+                                        src={samplepic}
+                                        className="pic"
+                                        alt="example10" /><br />
                                     <p className="category-title">Pasta</p>
                                 </a>
                             </div>
                             <div className="slide-pic">
                                 <a href="">
-                                    <img src={samplepic} className="pic" alt="example11" id="Black-bean" /><br />
+                                    <img
+                                        onClick={() => this.whatCircleWasClicked('Black-bean')}
+                                        src={samplepic}
+                                        className="pic"
+                                        alt="example11" /><br />
                                     <p className="category-title">Black Bean</p>
                                 </a>
                             </div>

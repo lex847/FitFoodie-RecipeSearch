@@ -15,7 +15,7 @@ class FullRecipe extends Component {
                         <button className="btn btn-random"><i className="far fa-heart"></i></button>
                     </div>
                     <div className="col-sm-4">
-                        <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="sample picture Image" />
+                        <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="magekjadkajdh" />
                     </div>
                 </div>
                 <div className="row">
