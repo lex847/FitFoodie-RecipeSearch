@@ -33,7 +33,7 @@ class App extends Component {
         let { recipeSearchInput, isSearchButtonPressed } = this.state
         let APPID = '4a967418'
         let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
-        let URL = `https://api.edamam.com/search?q=${recipeSearchInput}&app_id=${APPID}&app_key=${APPKEY}&count=50`
+        let URL = `https://api.edamam.com/search?q=${recipeSearchInput}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
         let config = {
             method: 'GET'
         }
@@ -55,13 +55,11 @@ class App extends Component {
     render() {
         const recipeSquares = this.state.hits.map((info) => {
             return(
-                <div className="row">
-                    <div className="col-sm-4">
-                        <div className="container">
-                            <img src={info.recipe.image}  />
-                            <h3>{info.recipe.label}</h3>
-                            <p>Servings: {info.recipe.yield}</p>
-                        </div>
+                <div className="col-md-4">
+                    <div className="container">
+                        <img src={info.recipe.image}  />
+                        <h3>{info.recipe.label}</h3>
+                        <p>Servings: {info.recipe.yield}</p>
                     </div>
                 </div>
             )

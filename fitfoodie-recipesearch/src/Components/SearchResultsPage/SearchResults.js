@@ -41,11 +41,7 @@ class SearchResults extends Component {
                     </div>
                 </div>
                 <div className="row row-margin">
-                    <div className="col-sm-4">
-                    </div>
-                        {this.props.squareInfo}
-                    <div className="col-sm-4">
-                    </div>
+                    {this.props.squareInfo}
                 </div>
             </div>
         )
