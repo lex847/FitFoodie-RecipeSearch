@@ -13,8 +13,8 @@ class RandomRecipesSquares extends Component {
                 <div className="row row-margin">
                     <div className="col-md-4">
                         <div className="container">
-                            <a href="#">
-                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture" />
+                            <a href="">
+                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture000" />
                             </a>
                             <button className="btn btn-random"><i className="far fa-heart"></i></button>
                             <h3>Vegan Bean Taco Filling</h3><br/>
@@ -22,8 +22,8 @@ class RandomRecipesSquares extends Component {
                     </div>
                     <div className="col-md-4">
                         <div className="container">
-                            <a href="#">
-                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture" />
+                            <a href="">
+                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture1" />
                             </a>
                             <button className="btn btn-random"><i className="far fa-heart"></i></button>
                             <h3>Brooklyn Penne Arrabiata</h3>
@@ -31,8 +31,8 @@ class RandomRecipesSquares extends Component {
                     </div>
                     <div className="col-md-4">
                         <div className="container">
-                            <a href="#">
-                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture" />
+                            <a href="">
+                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture2" />
                             </a>
                             <button className="btn btn-random"><i className="far fa-heart"></i></button>
                             <h3>Stuffed Butternut Squash</h3>
@@ -42,8 +42,8 @@ class RandomRecipesSquares extends Component {
                 <div className="row row-margin">
                     <div className="col-md-4">
                         <div className="container">
-                            <a href="#">
-                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture" />
+                            <a href="">
+                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture3" />
                             </a>
                             <button className="btn btn-random"><i className="far fa-heart"></i></button>
                             <h3>Insanely Easy Vegetarian Chili</h3>
@@ -51,8 +51,8 @@ class RandomRecipesSquares extends Component {
                     </div>
                     <div className="col-md-4">
                         <div className="container">
-                            <a href="#">
-                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture" />
+                            <a href="">
+                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture4" />
                             </a>
                             <button className="btn btn-random"><i className="far fa-heart"></i></button>
                             <h3>Slow Cooker Jambalaya</h3>
@@ -60,8 +60,8 @@ class RandomRecipesSquares extends Component {
                     </div>
                     <div className="col-md-4">
                         <div className="container">
-                            <a href="#">
-                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture" />
+                            <a href="">
+                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture5" />
                             </a>
                             <button className="btn btn-random"><i className="far fa-heart"></i></button>
                             <h3>Slow Cooker Roast Beef</h3>
@@ -71,8 +71,8 @@ class RandomRecipesSquares extends Component {
                 <div className="row row-margin">
                     <div className="col-md-4">
                         <div className="container">
-                            <a href="#">
-                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture" />
+                            <a href="">
+                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture6" />
                             </a>
                             <button className="btn btn-random"><i className="far fa-heart"></i></button>
                             <h3>Old-Fashioned Chicken and Noodles</h3>
@@ -80,8 +80,8 @@ class RandomRecipesSquares extends Component {
                     </div>
                     <div className="col-md-4">
                         <div className="container">
-                            <a href="#">
-                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture" />
+                            <a href="">
+                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture7" />
                             </a>
                             <button className="btn btn-random"><i className="far fa-heart"></i></button>
                             <h3>Chili-Lime Chicken Kabobs</h3>
@@ -89,8 +89,8 @@ class RandomRecipesSquares extends Component {
                     </div>
                     <div className="col-md-4">
                         <div className="container">
-                            <a href="#">
-                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture" />
+                            <a href="">
+                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture8" />
                             </a>
                             <button className="btn btn-random"><i className="far fa-heart"></i></button>
                             <h3>Chinese Chicken Fried Rice</h3>
@@ -100,8 +100,8 @@ class RandomRecipesSquares extends Component {
                 <div className="row row-margin">
                     <div className="col-md-4">
                         <div className="container">
-                            <a href="#">
-                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture" />
+                            <a href="">
+                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture9" />
                             </a>
                             <button className="btn btn-random"><i className="far fa-heart"></i></button>
                             <h3>Stuffed Peppers</h3>
@@ -109,8 +109,8 @@ class RandomRecipesSquares extends Component {
                     </div>
                     <div className="col-md-4">
                         <div className="container">
-                            <a href="#">
-                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture" />
+                            <a href="">
+                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture10" />
                             </a>
                             <button className="btn btn-random"><i className="far fa-heart"></i></button>
                             <h3>Asian Beef with Snow Peas</h3>
@@ -118,8 +118,8 @@ class RandomRecipesSquares extends Component {
                     </div>
                     <div className="col-md-4">
                         <div className="container">
-                            <a href="#">
-                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture" />
+                            <a href="">
+                                <img src="http://asvs.in/wp-content/uploads/2017/08/dummy.png" alt="Sample picture11" />
                             </a>
                             <button className="btn btn-random"><i className="far fa-heart"></i></button>
                             <h3>Red Broccoli Salad</h3>
