@@ -54,6 +54,29 @@ class App extends Component {
         }
     }
 
+    quickLinkSearch = (searchText) => {
+        let { recipeSearchInput, isSearchButtonPressed, hits } = this.state
+        let APPID = '4a967418'
+        let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
+        let URL = `https://api.edamam.com/search?q=${searchText}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
+        let config = {
+            method: 'GET'
+        }
+        //ES6 syntax
+        try {
+            let response = await fetch(URL, config);
+            let responseJSON = await response.json();
+            this.setState({
+                isSearchButtonPressed: true,
+                hits: responseJSON.hits
+            })
+            console.log(responseJSON);
+        }catch(e){
+            console.log(`We are in error`);
+            console.log(e);
+        }
+    }
+
     // Still working on this
     // const FullRecipeInfo = this.state.hits.map((data) => {
     //     return(
@@ -120,7 +143,7 @@ class App extends Component {
                     {this.state.isSearchButtonPressed ?
                         <SearchResultsPage squareInfo={recipeSquares}/>
                         :   <div>
-                                <QuickLinks />
+                                <QuickLinks quickLinkSearch={this.quickLinkSearch} />
                                 <RandomSelectedRecipes />
                             </div>
                     }

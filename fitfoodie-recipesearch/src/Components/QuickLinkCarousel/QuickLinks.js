@@ -10,43 +10,44 @@ class QuickLinks extends Component {
             isAQuickLinkedClicked: false,
             quickLinkClicked: ''
         }
-        this.quickSearchHandleClick = this.quickSearchHandleClick.bind(this);
-        this.whatCircleWasClicked = this.whatCircleWasClicked.bind(this);
+        this.whatCircleWasHadleChange = this.whatCircleWasHadleChange.bind(this);
     }
 
-    whatCircleWasClicked = (ingredient) => {
+    whatCircleWasHadleChange = (ingredient) => {
         console.log(ingredient);
-        var { quickLinkClicked } = this.state
+        var { quickLinkClicked, isAQuickLinkedClicked } = this.state
         this.setState({
-            quickLinkClicked: ingredient
+            quickLinkClicked: ingredient,
+            isAQuickLinkedClicked: true
         })
+        console.log(quickLinkClicked);
     }
 
-    quickSearchHandleClick = async (event) => {
-        //prevents page from reloading after search button is clicked since this
-        //code is within a form tag.
-        event.preventDefault()
-        let { quickLinkClicked, hits, isAQuickLinkedClicked } = this.state
-        let APPID = '4a967418'
-        let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
-        let URL = `https://api.edamam.com/search?q=${quickLinkClicked}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
-        let config = {
-            method: 'GET'
-        }
-        //ES6 syntax
-        try {
-            let response = await fetch(URL, config);
-            let responseJSON = await response.json();
-            this.setState({
-                isAQuickLinkedClicked: true,
-                hits: responseJSON.hits
-            })
-            console.log(responseJSON);
-        }catch(e){
-            console.log(`We are in error`);
-            console.log(e);
-        }
-    }
+    // quickSearchOnClick = async (event) => {
+    //     //prevents page from reloading after search button is clicked since this
+    //     //code is within a form tag.
+    //     event.preventDefault()
+    //     let { quickLinkClicked, hits, isAQuickLinkedClicked } = this.state
+    //     let APPID = '4a967418'
+    //     let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
+    //     let URL = `https://api.edamam.com/search?q=${quickLinkClicked}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
+    //     let config = {
+    //         method: 'GET'
+    //     }
+    //     //ES6 syntax
+    //     try {
+    //         let response = await fetch(URL, config);
+    //         let responseJSON = await response.json();
+    //         this.setState({
+    //             isAQuickLinkedClicked: true,
+    //             hits: responseJSON.hits
+    //         })
+    //         console.log(responseJSON);
+    //     }catch(e){
+    //         console.log(`We are in error`);
+    //         console.log(e);
+    //     }
+    // }
 
     render(){
         return(
@@ -62,7 +63,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href=''>
                                     <img
-                                        onClick={() => this.whatCircleWasClicked('Chicken')}
+                                        onClick={() => this.props.quickLinkSearch('Chicken')}
                                         src={samplepic}
                                         className="pic"
                                         alt="example" /><br />
@@ -72,7 +73,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="">
                                     <img
-                                        onClick={() => this.whatCircleWasClicked('Beef')}
+                                        onClick={() => this.props.quickLinkSearch('Beef')}
                                         src={samplepic}
                                         className="pic"
                                         alt="example1" /><br />
@@ -82,7 +83,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="">
                                     <img
-                                        onClick={() => this.whatCircleWasClicked('Vegitarian')}
+                                        onClick={() => this.props.quickLinkSearch('Vegitarian')}
                                         src={samplepic}
                                         className="pic"
                                         alt="example2" /><br />
@@ -92,7 +93,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="">
                                     <img
-                                        onClick={() => this.whatCircleWasClicked('Fish')}
+                                        onClick={() => this.props.quickLinkSearch('Fish')}
                                         src={samplepic}
                                         className="pic"
                                         alt="example3" /><br />
@@ -102,7 +103,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="">
                                     <img
-                                        onClick={() => this.whatCircleWasClicked('Mexican')}
+                                        onClick={() => this.props.quickLinkSearch('Mexican')}
                                         src={samplepic}
                                         className="pic"
                                         alt="example4" /><br />
@@ -112,7 +113,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="">
                                     <img
-                                        onClick={() => this.whatCircleWasClicked('Chocolate')}
+                                        onClick={() => this.props.quickLinkSearch('Chocolate')}
                                         src={samplepic}
                                         className="pic"
                                         alt="example5" /><br />
@@ -122,7 +123,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="">
                                     <img
-                                        onClick={() => this.whatCircleWasClicked('Fruit')}
+                                        onClick={() => this.props.quickLinkSearch('Fruit')}
                                         src={samplepic}
                                         className="pic"
                                         alt="example6" /><br />
@@ -132,7 +133,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="">
                                     <img
-                                        onClick={() => this.whatCircleWasClicked('Salad')}
+                                        onClick={() => this.props.quickLinkSearch('Salad')}
                                         src={samplepic}
                                         className="pic"
                                         alt="example7" /><br />
@@ -142,7 +143,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="">
                                     <img
-                                        onClick={() => this.whatCircleWasClicked('Dessert')}
+                                        onClick={() => this.props.quickLinkSearch('Dessert')}
                                         src={samplepic}
                                         className="pic"
                                         alt="example8"
@@ -153,7 +154,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="">
                                     <img
-                                        onClick={() => this.whatCircleWasClicked('Breakfast')}
+                                        onClick={() => this.props.quickLinkSearch('Breakfast')}
                                         src={samplepic}
                                         className="pic"
                                         alt="example9" /><br />
@@ -163,7 +164,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="">
                                     <img
-                                        onClick={() => this.whatCircleWasClicked('Pasta')}
+                                        onClick={() => this.props.quickLinkSearch('Pasta')}
                                         src={samplepic}
                                         className="pic"
                                         alt="example10" /><br />
@@ -173,7 +174,7 @@ class QuickLinks extends Component {
                             <div className="slide-pic">
                                 <a href="">
                                     <img
-                                        onClick={() => this.whatCircleWasClicked('Black-bean')}
+                                        onClick={() => this.props.quickLinkSearch('Black-bean')}
                                         src={samplepic}
                                         className="pic"
                                         alt="example11" /><br />
