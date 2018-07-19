@@ -96,20 +96,16 @@ class App extends Component {
                     {
                         this.state.isSearchButtonPressed
                         ?
+                            this.state.isDetailedRecipePressed
+                            ?
+                            <FullRecipe detailedRecipe={this.state.detailedRecipe} />
+                            :
                             <SearchResultsPage moreDetails={this.moreDetails} hits={this.state.hits}/>
                         :
                             <div>
                                 <QuickLinks quickLinkSearch={this.quickLinkSearch} />
                                 <RandomSelectedRecipes />
                             </div>
-                    }
-                </div>
-                <div>
-                    {
-                        this.state.isDetailedRecipePressed
-                        ?
-                        <FullRecipe detailedRecipe={this.state.detailedRecipe} />
-                        : null
                     }
                 </div>
                 <Footer />
