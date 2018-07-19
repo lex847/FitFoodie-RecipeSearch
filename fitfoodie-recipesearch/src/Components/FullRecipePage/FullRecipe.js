@@ -8,7 +8,10 @@ class FullRecipe extends Component {
             <div className="FullRecipe-container">
                 <div className="row">
                     <div className="col-sm-2">
-                        <button className="btn btn-info">Back to search results </button>
+                        <button
+                            onClick={this.props.backButtonPressed}
+                            className="btn btn-info">Back to search results
+                        </button>
                     </div>
                     <div className="col-sm-offset-2 col-sm-4">
                         <h1 className="title-box">{recipe.label}</h1><hr />

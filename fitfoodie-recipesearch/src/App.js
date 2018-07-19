@@ -16,10 +16,12 @@ class App extends Component {
             hits: [],
             detailedRecipe: {},
             isDetailedRecipePressed: false,
-            isSearchButtonPressed: false
+            isSearchButtonPressed: false,
+            isBackButtonPressed: false
         }
         this.userInputHandleChange = this.userInputHandleChange.bind(this);
         this.searchRecipesUserInput = this.searchRecipesUserInput.bind(this);
+        this.backButtonPressed = this.backButtonPressed.bind(this);
     }
 
     userInputHandleChange = (event) => {
@@ -45,6 +47,7 @@ class App extends Component {
             let responseJSON = await response.json();
             this.setState({
                 isSearchButtonPressed: true,
+                isBackButtonPressed: false,
                 hits: responseJSON.hits
             })
             console.log(responseJSON);
@@ -69,6 +72,7 @@ class App extends Component {
             let responseJSON = await response.json();
             this.setState({
                 isSearchButtonPressed: true,
+                isBackButtonPressed: false,
                 hits: responseJSON.hits
             })
             console.log(responseJSON);
@@ -83,7 +87,16 @@ class App extends Component {
         console.log(this.state.hits[index]);
         this.setState({
             detailedRecipe: this.state.hits[index],
-            isDetailedRecipePressed: true
+            isDetailedRecipePressed: true,
+            isBackButtonPressed: false
+        })
+    }
+
+    backButtonPressed = () => {
+        console.log('back button pressed');
+        this.setState({
+            isBackButtonPressed: true,
+            isDetailedRecipePressed: false
         })
     }
 
@@ -98,9 +111,13 @@ class App extends Component {
                         ?
                             this.state.isDetailedRecipePressed
                             ?
-                            <FullRecipe detailedRecipe={this.state.detailedRecipe} />
+                                !this.state.isBackButtonPressed
+                                ?
+                                <FullRecipe backButtonPressed={this.backButtonPressed} detailedRecipe={this.state.detailedRecipe} />
                             :
                             <SearchResultsPage moreDetails={this.moreDetails} hits={this.state.hits}/>
+                        :
+                        <SearchResultsPage moreDetails={this.moreDetails} hits={this.state.hits}/>
                         :
                             <div>
                                 <QuickLinks quickLinkSearch={this.quickLinkSearch} />
