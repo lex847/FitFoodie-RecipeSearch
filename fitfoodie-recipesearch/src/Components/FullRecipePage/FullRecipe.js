@@ -48,16 +48,23 @@ class FullRecipe extends Component {
                         <p>Servings: {recipe.yield}</p>
                         <p>Total Calories: {Math.floor(recipe.calories)}</p><hr />
                         <p>Fat: {Math.floor(recipe.totalNutrients.FAT.quantity)}{recipe.totalNutrients.FAT.unit}</p>
-                        <p>Saturated: 6</p>
-                        <p>Trans: 6</p>
-                        <p>Monounsaturated: 6</p>
-                        <p>polyunsaturated: 6</p>
-                        <p>carbs: 6</p>
-                        <p>net: 6</p>
-                        <p>fiber: 6</p>
-                        <p>sugars: 6</p>
-                        <p>add sugar: 6</p>
-                        <p>Protien: 6</p>
+                        <p>Saturated: {Math.floor(recipe.totalNutrients.FASAT.quantity)}{recipe.totalNutrients.FASAT.unit}</p>
+                        <p>Trans: {Math.floor(recipe.totalNutrients.FATRN.quantity)}{recipe.totalNutrients.FATRN.unit}</p>
+                        <p>Monounsaturated: {Math.floor(recipe.totalNutrients.FAMS.quantity)}{recipe.totalNutrients.FAMS.unit}</p>
+                        <p>Polyunsaturated: {Math.floor(recipe.totalNutrients.FAPU.quantity)}{recipe.totalNutrients.FAPU.unit}</p>
+                        <p>Carbs: {Math.floor(recipe.totalNutrients.CHOCDF.quantity)}{recipe.totalNutrients.CHOCDF.unit}</p>
+                        <p>Fiber: {Math.floor(recipe.totalNutrients.FIBTG.quantity)}{recipe.totalNutrients.FIBTG.unit}</p>
+                        <p>Sugars: {Math.floor(recipe.totalNutrients.SUGAR.quantity)}{recipe.totalNutrients.SUGAR.unit}</p>
+                        <p>Protien: {Math.floor(recipe.totalNutrients.PROCNT.quantity)}{recipe.totalNutrients.PROCNT.unit}</p>
+                        <p>Cholesterol: {Math.floor(recipe.totalNutrients.CHOLE.quantity)}{recipe.totalNutrients.CHOLE.unit}</p>
+                        <p>Sodium: {Math.floor(recipe.totalNutrients.NA.quantity)}{recipe.totalNutrients.NA.unit}</p>
+                        <p>Calcium: {Math.floor(recipe.totalNutrients.CA.quantity)}{recipe.totalNutrients.CA.unit}</p>
+                        <p>Magnesium: {Math.floor(recipe.totalNutrients.MG.quantity)}{recipe.totalNutrients.MG.unit}</p>
+                        <p>Potassium: {Math.floor(recipe.totalNutrients.K.quantity)}{recipe.totalNutrients.K.unit}</p>
+                        <p>Iron: {Math.floor(recipe.totalNutrients.FE.quantity)}{recipe.totalNutrients.FE.unit}</p>
+                        <p>Zinc: {Math.floor(recipe.totalNutrients.ZN.quantity)}{recipe.totalNutrients.ZN.unit}</p>
+                        <p>Phosphorus: {Math.floor(recipe.totalNutrients.P.quantity)}{recipe.totalNutrients.P.unit}</p>
+
                     </div>
                 </div>
             </div>
