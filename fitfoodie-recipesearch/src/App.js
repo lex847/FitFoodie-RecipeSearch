@@ -15,7 +15,7 @@ class App extends Component {
             recipeSearchInput: '',
             hits: [],
             detailedRecipe: {},
-            isDetailedRecipePresed: false,
+            isDetailedRecipePressed: false,
             isSearchButtonPressed: false
         }
         this.userInputHandleChange = this.userInputHandleChange.bind(this);
@@ -83,7 +83,7 @@ class App extends Component {
         console.log(this.state.hits[index]);
         this.setState({
             detailedRecipe: this.state.hits[index],
-            isDetailedRecipePresed: true
+            isDetailedRecipePressed: true
         })
     }
 
@@ -104,7 +104,14 @@ class App extends Component {
                             </div>
                     }
                 </div>
-                <FullRecipe detailedRecipe={this.state.detailedRecipe} />
+                <div>
+                    {
+                        this.state.isDetailedRecipePressed
+                        ?
+                        <FullRecipe detailedRecipe={this.state.detailedRecipe} />
+                        : null
+                    }
+                </div>
                 <Footer />
             </div>
         );
