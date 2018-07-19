@@ -3,6 +3,7 @@ import './FullRecipe.css';
 
 class FullRecipe extends Component {
     render(){
+        let recipe = this.props.detailedRecipe
         return(
             <div className="FullRecipe-container">
                 <div className="row">
