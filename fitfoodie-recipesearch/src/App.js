@@ -53,8 +53,9 @@ class App extends Component {
             console.log(e);
         }
     }
-
-    quickLinkSearch = (searchText) => {
+    //NOTE to self****you have to use async with new fetch request syntax****
+    quickLinkSearch = async (event, searchText) => {
+        event.preventDefault()
         let { recipeSearchInput, isSearchButtonPressed, hits } = this.state
         let APPID = '4a967418'
         let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
