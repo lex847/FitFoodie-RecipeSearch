@@ -14,6 +14,7 @@ class App extends Component {
         this.state = {
             recipeSearchInput: '',
             hits: [],
+            quickLinkClicked: '',
             detailedRecipe: {},
             isDetailedRecipePressed: false,
             isSearchButtonPressed: false,
@@ -57,12 +58,12 @@ class App extends Component {
         }
     }
     //NOTE to self****you have to use async with new fetch request syntax****
-    quickLinkSearch = async (event, searchText) => {
+    quickLinkSearch = async (event, name) => {
         event.preventDefault()
         let { recipeSearchInput, isSearchButtonPressed, hits } = this.state
         let APPID = '4a967418'
         let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
-        let URL = `https://api.edamam.com/search?q=${searchText}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
+        let URL = `https://api.edamam.com/search?q=${name}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
         let config = {
             method: 'GET'
         }
@@ -115,9 +116,9 @@ class App extends Component {
                                 ?
                                 <FullRecipe backButtonPressed={this.backButtonPressed} detailedRecipe={this.state.detailedRecipe} />
                             :
-                            <SearchResultsPage moreDetails={this.moreDetails} hits={this.state.hits}/>
+                            <SearchResultsPage userInput={this.state.recipeSearchInput} moreDetails={this.moreDetails} hits={this.state.hits}/>
                         :
-                        <SearchResultsPage moreDetails={this.moreDetails} hits={this.state.hits}/>
+                        <SearchResultsPage userInput={this.state.recipeSearchInput} moreDetails={this.moreDetails} hits={this.state.hits}/>
                         :
                             <div>
                                 <QuickLinks quickLinkSearch={this.quickLinkSearch} />
