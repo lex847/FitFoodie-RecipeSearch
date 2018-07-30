@@ -33,6 +33,7 @@ class RandomRecipesSquares extends Component {
                                 alt="Sample picture000" />
                         </a>
                         <button
+                            onClick={() => this.props.fullDailyRecipe(name)}
                             className="btn btn-random"><i className="far fa-heart"></i></button>
                         <h3>{name}</h3><br/>
                     </div>

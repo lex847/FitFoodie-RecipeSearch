@@ -15,6 +15,7 @@ class App extends Component {
             recipeSearchInput: '',
             hits: [],
             quickLinkClicked: '',
+            randomDailyRecipeClicked: '',
             detailedRecipe: {},
             isDetailedRecipePressed: false,
             isSearchButtonPressed: false,
@@ -23,6 +24,7 @@ class App extends Component {
         this.userInputHandleChange = this.userInputHandleChange.bind(this);
         this.searchRecipesUserInput = this.searchRecipesUserInput.bind(this);
         this.backButtonPressed = this.backButtonPressed.bind(this);
+        this.fullDailyRecipe = this.fullDailyRecipe.bind(this);
     }
 
     userInputHandleChange = (event) => {
@@ -60,7 +62,7 @@ class App extends Component {
     //NOTE to self****you have to use async with new fetch request syntax****
     quickLinkSearch = async (event, name) => {
         event.preventDefault()
-        let { recipeSearchInput, isSearchButtonPressed, hits } = this.state
+        let { quickLinkClicked, isSearchButtonPressed, hits } = this.state
         let APPID = '4a967418'
         let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
         let URL = `https://api.edamam.com/search?q=${name}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
@@ -85,7 +87,7 @@ class App extends Component {
 
     randomDailyRecipeSquare = async (event, name) => {
         event.preventDefault()
-        let { recipeSearchInput, isSearchButtonPressed, hits } = this.state
+        let { randomDailyRecipeClicked, isSearchButtonPressed, hits } = this.state
         let APPID = '4a967418'
         let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
         let URL = `https://api.edamam.com/search?q=${name}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
@@ -118,6 +120,15 @@ class App extends Component {
         })
     }
 
+    fullDailyRecipe = (name) => {
+        console.log(name);
+        this.setState({
+            detailedRecipe: this.state.hits[name],
+            isDetailedRecipePressed: true,
+            isBackButtonPressed: false
+        })
+    }
+
     backButtonPressed = () => {
         console.log('back button pressed');
         this.setState({
@@ -145,10 +156,10 @@ class App extends Component {
                         :
                         <SearchResultsPage userInput={this.state.recipeSearchInput} moreDetails={this.moreDetails} hits={this.state.hits}/>
                         :
-                            <div>
-                                <QuickLinks quickLinkSearch={this.quickLinkSearch} />
-                                <RandomSelectedRecipes recipesOfTheDay={this.randomDailyRecipeSquare} hits={this.state.hits}/>
-                            </div>
+                        <div>
+                            <QuickLinks quickLinkSearch={this.quickLinkSearch} moreDetails={this.moreDetails} />
+                            <RandomSelectedRecipes recipesOfTheDay={this.randomDailyRecipeSquare} hits={this.state.hits} fullDailyRecipe={this.fullDailyRecipe}/>
+                        </div>
                     }
                 </div>
                 <Footer />
