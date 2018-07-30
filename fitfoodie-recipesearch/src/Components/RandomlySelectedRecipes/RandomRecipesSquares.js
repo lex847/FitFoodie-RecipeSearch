@@ -28,11 +28,12 @@ class RandomRecipesSquares extends Component {
                     <div className="container">
                         <a href="">
                             <img
-                                onClick={(event) => this.props.quickLinkSearch(event, {name})}
+                                onClick={(event) => this.props.recipesOfTheDay(event, {name})}
                                 src="http://asvs.in/wp-content/uploads/2017/08/dummy.png"
                                 alt="Sample picture000" />
                         </a>
-                        <button className="btn btn-random"><i className="far fa-heart"></i></button>
+                        <button
+                            className="btn btn-random"><i className="far fa-heart"></i></button>
                         <h3>{name}</h3><br/>
                     </div>
                 </div>

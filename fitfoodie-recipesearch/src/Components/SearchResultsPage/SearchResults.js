@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import './SearchResults.css';
 
 class SearchResults extends Component {
-    constructor(props){
-        super(props);
-    }
     render(){
         const recipeSquares = this.props.hits.map((info, index) => {
             return(

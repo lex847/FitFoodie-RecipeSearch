@@ -13,7 +13,7 @@ class FullRecipe extends Component {
                             className="btn btn-info">Back to search results
                         </button>
                     </div>
-                    <div className="col-sm-offset-2 col-sm-4">
+                    <div className="col-sm-offset-2 col-sm-4 nutritional-facts">
                         <h1 className="title-box">{recipe.label}</h1><hr />
                         <p>Preperation Time: {recipe.totalTime} mins</p>
                         <p>Health Lables: </p>
@@ -28,7 +28,7 @@ class FullRecipe extends Component {
                         <button className="btn btn-random"><i className="far fa-heart"></i></button>
                     </div>
                     <div className="col-sm-4">
-                        <img src={recipe.image} alt={recipe.label} />
+                        <img className="food-image" src={recipe.image} alt={recipe.label} />
                     </div>
                 </div>
                 <div className="row">
