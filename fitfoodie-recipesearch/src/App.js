@@ -122,7 +122,7 @@ class App extends Component {
                         :
                             <div>
                                 <QuickLinks quickLinkSearch={this.quickLinkSearch} />
-                                <RandomSelectedRecipes />
+                                <RandomSelectedRecipes recipesOfTheDay={this.quickLinkSearch} />
                             </div>
                     }
                 </div>
