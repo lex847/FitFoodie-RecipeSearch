@@ -61,6 +61,7 @@ class App extends Component {
     }
     //NOTE to self****you have to use async with new fetch request syntax****
     quickLinkSearch = async (event, name) => {
+        console.log(name);
         event.preventDefault()
         let { quickLinkClicked, isSearchButtonPressed, hits } = this.state
         let APPID = '4a967418'
@@ -74,6 +75,7 @@ class App extends Component {
             let response = await fetch(URL, config);
             let responseJSON = await response.json();
             this.setState({
+                quickLinkClicked: this.props.name,
                 isSearchButtonPressed: true,
                 isBackButtonPressed: false,
                 hits: responseJSON.hits
