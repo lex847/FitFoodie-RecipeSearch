@@ -20,7 +20,8 @@ class RandomRecipesSquares extends Component {
             <div className="random-recipes-container">
                 <div className="row">
                     <div className="col-md-12">
-                        <h1>Recipes of the day</h1>
+                        <h1><b>Recipes of the day</b></h1>
+                        <hr />
                     </div>
                 </div>
                 <div className="row row-margin">
