@@ -10,19 +10,18 @@ class QuickLinks extends Component {
             isAQuickLinkedClicked: false,
             quickLinkClicked: ''
         }
-        this.whatCircleWasHadleChange = this.whatCircleWasHadleChange.bind(this);
+        // this.whatCircleWasHadleChange = this.whatCircleWasHadleChange.bind(this);
     }
 
-    whatCircleWasHadleChange = (ingredient) => {
-        console.log("inside what circle was handle change");
-        console.log(ingredient);
-        var { quickLinkClicked, isAQuickLinkedClicked } = this.state
-        this.setState({
-            quickLinkClicked: ingredient,
-            isAQuickLinkedClicked: true
-        })
-        console.log(quickLinkClicked);
-    }
+    // whatCircleWasHadleChange = (ingredient) => {
+    //     console.log(ingredient);
+    //     var { quickLinkClicked, isAQuickLinkedClicked } = this.state
+    //     this.setState({
+    //         quickLinkClicked: ingredient,
+    //         isAQuickLinkedClicked: true
+    //     })
+    //     console.log(quickLinkClicked);
+    // }
 
     render(){
         let carouselNames = ['Chicken','Beef','Vegitarian','Fish','Mexican','Chocolate','Fruit','Salad','Dessert','Breakfast','Pasta','Black-bean']
@@ -31,7 +30,7 @@ class QuickLinks extends Component {
                 <div className="slide-pic">
                     <a href=''>
                         <img
-                            onClick={() => this.whatCircleWasHadleChange(name)}
+                            onClick={(event) => this.props.quickLinkSearch(event, name)}
                             src={samplepic}
                             className="pic"
                             alt="example" /><br />

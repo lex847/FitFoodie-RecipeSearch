@@ -62,14 +62,19 @@ class App extends Component {
     //NOTE to self****you have to use async with new fetch request syntax****
     quickLinkSearch = async (event, name) => {
         console.log(name);
+        console.log("quick linked clicked");
+        console.log(this.state.quickLinkClicked);
+
         event.preventDefault()
-        let { quickLinkClicked, isSearchButtonPressed, hits } = this.state
         let APPID = '4a967418'
         let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
         let URL = `https://api.edamam.com/search?q=${name}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
         let config = {
             method: 'GET'
         }
+        console.log(name);
+        console.log("thats the name");
+        let { quickLinkClicked, isSearchButtonPressed, hits } = this.state
         //ES6 syntax
         try {
             let response = await fetch(URL, config);
@@ -80,6 +85,7 @@ class App extends Component {
                 isBackButtonPressed: false,
                 hits: responseJSON.hits
             })
+            console.log(this.state.quickLinkClicked);
             console.log(responseJSON);
         }catch(e){
             console.log(`We are in error`);
