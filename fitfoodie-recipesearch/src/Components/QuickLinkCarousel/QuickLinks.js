@@ -8,7 +8,7 @@ class QuickLinks extends Component {
     }
 
     render(){
-        let carouselNames = ['Chicken','Beef','Vegitarian','Fish','Mexican','Chocolate','Fruit','Salad','Dessert','Breakfast','Pasta','Black-bean']
+        let carouselNames = ['Chicken','Beef','Vegetarian','Fish','Mexican','Chocolate','Fruit','Salad','Dessert','Breakfast','Pasta','Black-bean']
         const suggestedSearch = carouselNames.map((name) => {
             return(
                 <div className="slide-pic">

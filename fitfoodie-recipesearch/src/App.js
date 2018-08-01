@@ -85,31 +85,6 @@ class App extends Component {
         }
     }
 
-    randomDailyRecipeSquare = async (event, name) => {
-        event.preventDefault()
-        let { isSearchButtonPressed, hits } = this.state
-        let APPID = '4a967418'
-        let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
-        let URL = `https://api.edamam.com/search?q=${name}&app_id=${APPID}&app_key=${APPKEY}&from=0&to=150&count=150`
-        let config = {
-            method: 'GET'
-        }
-        //ES6 syntax
-        try {
-            let response = await fetch(URL, config);
-            let responseJSON = await response.json();
-            this.setState({
-                isSearchButtonPressed: true,
-                isBackButtonPressed: false,
-                hits: responseJSON.hits
-            })
-            console.log(responseJSON);
-        }catch(e){
-            console.log(`We are in error`);
-            console.log(e);
-        }
-    }
-
     moreDetails = (index) => {
         console.log(index);
         console.log(this.state.hits[index]);
@@ -158,7 +133,7 @@ class App extends Component {
                         :
                         <div>
                             <QuickLinks quickLinkSearch={this.quickLinkSearch} moreDetails={this.moreDetails} />
-                            <RandomSelectedRecipes recipesOfTheDay={this.randomDailyRecipeSquare} hits={this.state.hits} fullDailyRecipe={this.fullDailyRecipe}/>
+                            <RandomSelectedRecipes recipesOfTheDay={this.randomDailyRecipeSquare} hits={this.state.hits} detailedRecipe={this.state.detailedRecipe} fullDailyRecipe={this.fullDailyRecipe}/>
                         </div>
                     }
                 </div>
