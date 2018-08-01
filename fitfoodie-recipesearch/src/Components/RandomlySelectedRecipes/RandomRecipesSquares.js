@@ -36,7 +36,7 @@ class RandomRecipesSquares extends Component {
             let { hits } = this.state
             let APPID = '4a967418'
             let APPKEY = 'ea1f39ad3a37a863f0efdc88e0cc30bb'
-            let URL = `https://api.edamam.com/search?q=best-food&app_id=${APPID}&app_key=${APPKEY}&from=0&to=50&count=50`
+            let URL = `https://api.edamam.com/search?q=gourmet&app_id=${APPID}&app_key=${APPKEY}&from=0&to=150&count=150`
             let config = {
                 method: 'GET'
             }
