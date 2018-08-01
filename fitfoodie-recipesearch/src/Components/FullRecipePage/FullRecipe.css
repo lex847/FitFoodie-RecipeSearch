@@ -19,6 +19,10 @@
     text-align: center;
 }
 
+.btn-random:hover {
+    color: white;
+}
+
 p {
     font-size: 25px;
 }

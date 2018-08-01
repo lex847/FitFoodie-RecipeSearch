@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
+import Favorities from '../FavoritesPage/Favorites.js';
 import './FullRecipe.css';
 
 class FullRecipe extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+
+        }
+        this.favoriteButtonHandleClick = this.favoriteButtonHandleClick.bind(this);
+    }
+
+    favoriteButtonHandleClick = () => {
+        console.log("heart button clicked");
+    }
     render(){
         let recipe = this.props.detailedRecipe.recipe
         return(
@@ -25,7 +37,9 @@ class FullRecipe extends Component {
                                 }
                             </ul>
                         <hr />
-                        <button className="btn btn-random"><i className="far fa-heart"></i></button>
+                        <button
+                            onClick={this.favoriteButtonHandleClick}
+                            className="btn btn-info btn-random"><i className="far fa-heart"></i></button>
                     </div>
                     <div className="col-sm-4">
                         <img className="food-image" src={recipe.image} alt={recipe.label} />
@@ -172,6 +186,7 @@ class FullRecipe extends Component {
                         }
                     </div>
                 </div>
+                <Favorities />
             </div>
         )
     }
