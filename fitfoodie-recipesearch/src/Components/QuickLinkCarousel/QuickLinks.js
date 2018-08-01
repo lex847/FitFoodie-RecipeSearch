@@ -5,23 +5,7 @@ import './QuickLinks.css';
 class QuickLinks extends Component {
     constructor(props){
         super(props);
-        this.state = {
-            hits: [],
-            isAQuickLinkedClicked: false,
-            quickLinkClicked: ''
-        }
-        // this.whatCircleWasHadleChange = this.whatCircleWasHadleChange.bind(this);
     }
-
-    // whatCircleWasHadleChange = (ingredient) => {
-    //     console.log(ingredient);
-    //     var { quickLinkClicked, isAQuickLinkedClicked } = this.state
-    //     this.setState({
-    //         quickLinkClicked: ingredient,
-    //         isAQuickLinkedClicked: true
-    //     })
-    //     console.log(quickLinkClicked);
-    // }
 
     render(){
         let carouselNames = ['Chicken','Beef','Vegitarian','Fish','Mexican','Chocolate','Fruit','Salad','Dessert','Breakfast','Pasta','Black-bean']
