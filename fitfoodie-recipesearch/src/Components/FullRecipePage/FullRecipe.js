@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Favorities from '../FavoritesPage/Favorites.js';
+import Favorites from '../FavoritesPage/Favorites.js';
 import './FullRecipe.css';
 
 class FullRecipe extends Component {
@@ -186,7 +186,7 @@ class FullRecipe extends Component {
                         }
                     </div>
                 </div>
-                <Favorities />
+                <Favorites />
             </div>
         )
     }
