@@ -125,7 +125,7 @@ class App extends Component {
                             ?
                                 !this.state.isBackButtonPressed
                                 ?
-                                <FullRecipe backButtonPressed={this.backButtonPressed} detailedRecipe={this.state.detailedRecipe} />
+                                <FullRecipe backButtonPressed={this.backButtonPressed} detailedRecipe={this.state.detailedRecipe} moreDetails={this.moreDetails} hits={this.state.hits} />
                             :
                             <SearchResultsPage userInput={this.state.recipeSearchInput} moreDetails={this.moreDetails} hits={this.state.hits}/>
                         :

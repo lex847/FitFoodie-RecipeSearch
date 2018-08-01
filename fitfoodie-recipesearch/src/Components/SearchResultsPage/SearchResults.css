@@ -55,7 +55,7 @@ h3,p {
 .container .btn-results {
     position: absolute;
     top: 20%;
-    left: 25%;
+    left: 215%;
     height: auto;
     width: auto;
     transform: translate(-50%, -50%);

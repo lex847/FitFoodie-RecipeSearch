@@ -7,13 +7,13 @@ class SearchResults extends Component {
             return(
                 <div className="col-md-4">
                     <div className="container">
-                            <img src={info.recipe.image}  />
-                            <h3>{info.recipe.label}</h3>
-                            <p>Servings: {info.recipe.yield}</p>
-                            <button
-                                onClick={() => this.props.moreDetails(index)}
-                                className="btn btn-info">More details
-                            </button>
+                        <img src={info.recipe.image}  />
+                        <h3>{info.recipe.label}</h3>
+                        <p>Servings: {info.recipe.yield}</p>
+                        <button
+                            onClick={() => this.props.moreDetails(index)}
+                            className="btn btn-info">More details
+                        </button>
                     </div>
                 </div>
             )
